@@ -34,7 +34,7 @@ class LoanApplicationController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(int $id)
     {
         return $this->loanapplicationService->findLoanApplicationById($id);
         
@@ -51,7 +51,7 @@ class LoanApplicationController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(int $id)
     {
         return $this->loanapplicationService->deleteLoanApplication( $id);
     }

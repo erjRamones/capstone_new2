@@ -36,7 +36,7 @@ class UserController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(int $id)
     {
         return $this->userService->findUserById($id);
 
@@ -44,7 +44,7 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UserStoreRequest $request, string $id)
+    public function update(UserStoreRequest $request, int $id)
     {
         return $this->userService->updateUser($request, $id);
     }
@@ -52,7 +52,7 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(int $id)
     {
         return $this->userService->deleteUser($id);
 

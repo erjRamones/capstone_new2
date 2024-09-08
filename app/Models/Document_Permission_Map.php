@@ -18,6 +18,7 @@ class Document_Permission_Map extends DBLibrary
      */
     protected $primarykey = 'id';
     protected $table = 'document_permission_map';
+    
     protected $fillable = [
         'description',
     ];

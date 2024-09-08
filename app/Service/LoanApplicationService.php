@@ -16,26 +16,26 @@ class LoanApplicationService implements LoanApplicationServiceInterface
 
     public function findLoanApplication()
     {
-        $loanApplicationRepository =$this->loanApplicationRepository->findMany();
-        return LoanApplicationResource::collection($loanApplicationRepository);
+        $loanApplication =$this->loanApplicationRepository->findMany();
+        return LoanApplicationResource::collection($loanApplication);
     }
 
     public function findLoanApplicationById(int $id)
     {
-        $loanApplicationRepository =$this->loanApplicationRepository->findOneById($id);
-        return new LoanApplicationResource($loanApplicationRepository);
+        $loanApplication =$this->loanApplicationRepository->findOneById($id);
+        return new LoanApplicationResource($loanApplication);
     }
 
     public function createLoanApplication(object $payload)
     {
-        $loanApplicationRepository =$this->loanApplicationRepository->create($payload);
-        return new LoanApplicationResource($loanApplicationRepository);
+        $loanApplication =$this->loanApplicationRepository->create($payload);
+        return new LoanApplicationResource($loanApplication);
     }
 
     public function updateLoanApplication(object $payload, int $id)
     {
-        $loanApplicationRepository =$this->loanApplicationRepository->update($payload, $id);
-        return new LoanApplicationResource($loanApplicationRepository);
+        $loanApplication =$this->loanApplicationRepository->update($payload, $id);
+        return new LoanApplicationResource($loanApplication);
     }
 
     public function deleteLoanApplication(int $id)

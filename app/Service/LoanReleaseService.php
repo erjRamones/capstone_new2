@@ -16,28 +16,28 @@ class LoanReleaseService implements LoanReleaseServiceInterface
 
     public function findLoanRelease()
     {
-        $loanReleaseRepository = $this->loanReleaseRepository->findMany();
+        $loanRelease = $this->loanReleaseRepository->findMany();
 
-        return LoanReleaseResource::collection($loanReleaseRepository);
+        return LoanReleaseResource::collection($loanRelease);
     }
 
     public function findLoanReleaseById(int $id)
     {
-        $loanReleaseRepository = $this->loanReleaseRepository->findOneById($id);
-        return new LoanReleaseResource($loanReleaseRepository);
+        $loanRelease = $this->loanReleaseRepository->findOneById($id);
+        return new LoanReleaseResource($loanRelease);
     }
 
     public function createLoanRelease(object $payload)
     {
-        $loanReleaseRepository = $this->loanReleaseRepository->create($payload);
-        return new LoanReleaseResource($loanReleaseRepository);
+        $loanRelease = $this->loanReleaseRepository->create($payload);
+        return new LoanReleaseResource($loanRelease);
 
     }
 
     public function updateLoanRelease(object $payload, int $id)
     {
-        $loanReleaseRepository = $this->loanReleaseRepository->update($payload, $id);
-        return new LoanReleaseResource($loanReleaseRepository);
+        $loanRelease = $this->loanReleaseRepository->update($payload, $id);
+        return new LoanReleaseResource($loanRelease);
 
     }
     

@@ -15,31 +15,31 @@ class PaymentScheduleService implements PaymentScheduleServiceInterface
     }
     public function findPaymentSchedule()
     {
-        $paymentScheduleRepository = $this->paymentScheduleRepository->findMany();
+        $paymentSchedule = $this->paymentScheduleRepository->findMany();
 
-        return PaymentScheduleResource::collection($paymentScheduleRepository);
+        return PaymentScheduleResource::collection($paymentSchedule);
     }
 
     public function findPaymentScheduleById(int $id)
     {
-        $paymentScheduleRepository = $this->paymentScheduleRepository->findOneById($id);
+        $paymentSchedule = $this->paymentScheduleRepository->findOneById($id);
         
-        return new PaymentScheduleResource($paymentScheduleRepository);
+        return new PaymentScheduleResource($paymentSchedule);
 
     }
 
     public function createPaymentSchedule(object $payload)
     {
-        $paymentScheduleRepository = $this->paymentScheduleRepository->create($payload);
+        $paymentSchedule = $this->paymentScheduleRepository->create($payload);
         
-        return new PaymentScheduleResource($paymentScheduleRepository); 
+        return new PaymentScheduleResource($paymentSchedule); 
     }
 
     public function updatePaymentSchedule(object $payload, int $id)
     {
-        $paymentScheduleRepository = $this->paymentScheduleRepository->update($payload, $id);
+        $paymentSchedule = $this->paymentScheduleRepository->update($payload, $id);
 
-        return new PaymentScheduleResource($paymentScheduleRepository); 
+        return new PaymentScheduleResource($paymentSchedule); 
     }
 
     public function deletePaymentSchedule(int $id)
